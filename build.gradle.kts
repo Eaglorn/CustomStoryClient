@@ -8,7 +8,7 @@ plugins {
     id("com.google.protobuf") version "0.9.5"
 }
 
-group = "ru.eaglorn.csc"
+group = "ru.eaglorn.cs"
 version = "0.0.1"
 
 repositories {
