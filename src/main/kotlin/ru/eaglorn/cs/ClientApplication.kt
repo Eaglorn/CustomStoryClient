@@ -1,5 +1,5 @@
-import io.ktor.network.selector.*
-import io.ktor.network.sockets.*
+package ru.eaglorn.cs
+
 import io.ktor.utils.io.*
 import javafx.application.Application
 import javafx.event.ActionEvent
@@ -18,9 +18,7 @@ import io.ktor.utils.io.readInt
 import io.ktor.utils.io.writeFully
 import kotlinx.coroutines.Dispatchers
 import ru.eaglorn.Message.ChatMessage
-import java.io.ByteArrayOutputStream
 import java.nio.ByteBuffer
-import kotlin.compareTo
 
 class ClientApplication : Application() {
     override fun start(stage: Stage) {

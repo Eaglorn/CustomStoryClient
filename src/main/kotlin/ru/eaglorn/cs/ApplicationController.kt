@@ -1,3 +1,5 @@
+package ru.eaglorn.cs
+
 import javafx.fxml.FXML
 import javafx.scene.control.Label
 

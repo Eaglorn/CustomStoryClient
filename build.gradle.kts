@@ -28,12 +28,14 @@ kotlin {
     jvmToolchain(23)
 }
 
-val ktorVersion = "3.0.3"
-val kotlinxCoroutinesVersion = "1.10.1"
-val logbackVersion = "1.5.16"
-val kotlinVersion = "2.1.10"
+val kotlinVersion = "2.1.20"
+val kotlinxCoroutinesVersion = "1.10.2"
+val ktorVersion = "3.1.2"
+val log4jVersion = "2.24.3"
 val protobufVersion = "4.30.2"
 val zstdVersion = "1.5.7-2"
+val springVersion = "3.4.4"
+val eclipseCollections = "11.1.0"
 val controlsfxVersion = "11.2.1"
 
 dependencies {
@@ -41,10 +43,17 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinxCoroutinesVersion")
     implementation("io.ktor:ktor-network:$ktorVersion")
     implementation("io.ktor:ktor-network-tls:$ktorVersion")
-    implementation("ch.qos.logback:logback-classic:$logbackVersion")
     implementation("org.controlsfx:controlsfx:$controlsfxVersion")
     implementation("com.google.protobuf:protobuf-java:$protobufVersion")
     implementation("com.github.luben:zstd-jni:$zstdVersion")
+    implementation("org.apache.logging.log4j:log4j-api:${log4jVersion}")
+    implementation("org.apache.logging.log4j:log4j-core:${log4jVersion}")
+    implementation("org.apache.logging.log4j:log4j-slf4j2-impl:${log4jVersion}")
+    implementation("org.springframework.boot:spring-boot-starter:$springVersion") {
+        exclude("org.springframework.boot","spring-boot-starter-logging")
+    }
+    implementation("org.eclipse.collections:eclipse-collections-api:$eclipseCollections")
+    implementation("org.eclipse.collections:eclipse-collections:$eclipseCollections")
 }
 
 javafx {
