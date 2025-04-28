@@ -1,7 +1,7 @@
 plugins {
     id("java")
     id("application")
-    id("org.jetbrains.kotlin.jvm") version "2.1.10"
+    id("org.jetbrains.kotlin.jvm") version "2.1.20"
     id("io.ktor.plugin") version "3.0.3"
     id("org.openjfx.javafxplugin") version "0.1.0"
     id("org.beryx.runtime") version "1.13.1"
@@ -20,7 +20,7 @@ tasks.named<JavaExec>("runShadow") {
 }
 
 application {
-    mainClass = "ClientApplicationKt"
+    mainClass = "ru.eaglorn.cs.ClientApplicationKt"
     applicationName = "CustomStoryClient"
 }
 
@@ -92,16 +92,5 @@ runtime {
 protobuf {
     protoc {
         artifact = "com.google.protobuf:protoc:$protobufVersion"
-    }
-}
-
-sourceSets {
-    main {
-        proto {
-            srcDir("src/main/proto")
-        }
-        java {
-            srcDir("build/generated/source/proto/main/java")
-        }
     }
 }
